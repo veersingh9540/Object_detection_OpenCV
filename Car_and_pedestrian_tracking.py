@@ -47,29 +47,3 @@ while True:
         break
 
 video.release()
-"""
-#create opencv image
-image = cv2.imread(img_file)
-
-#converting the image to black and white 
-Black_and_white = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-#create car classifier
-car_tracker = cv2.CascadeClassifier(classifier_file)
-#detect cars
-cars = car_tracker.detectMultiScale(Black_and_white)
-
-#Draw Rectangles around a car 
-for (x,y,w,h) in cars:
-    cv2.rectangle(image, (x,y),(x+w,y+h),(0,0,255),2) 
-
-
-
-#display the image with faces spotted 
-cv2.imshow('NEURTH car detector',image)
-
-#wait to exit and show the image to us 
-cv2.waitKey()
-
-"""
-
